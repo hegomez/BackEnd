@@ -18,9 +18,12 @@
 			$P=explode(";", $_GET['Precio']);
 			foreach ($Info as $Content)
 			{
+				$PrecioT=str_replace("$", '', $Content["Precio"]);
+				$PrecioT=str_replace(",", '', $PrecioT);
+				$Precio=$PrecioT;
 				if(empty($Tipo))
 				{
-					if($Content["Ciudad"]==$Ciudad && $Content["Precio"]>=$P[0] $Content["Precio"]<=$P[1])
+					if($Content["Ciudad"]==$Ciudad && $Precio>=$P[0] && $Precio<=$P[1])
 					{
 						$array[$Content['Id']]=array(
 							'Direccion'=>$Content["Direccion"],
@@ -34,7 +37,7 @@
 				}
 				else
 				{
-					if($Content["Ciudad"]==$Ciudad && $Content["Tipo"]==$Tipo && $Content["Precio"]>=$P[0] $Content["Precio"]<=$P[1])
+					if($Content["Ciudad"]==$Ciudad && $Content["Tipo"]==$Tipo && $Precio>=$P[0] && $Precio<=$P[1])
 					{
 						$array[$Content['Id']]=array(
 							'Direccion'=>$Content["Direccion"],

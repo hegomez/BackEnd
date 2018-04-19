@@ -142,6 +142,7 @@
     			}
     			else
     			{
+    				ResultadoBusqueda.html('');
     				var ChargeSection="set";
 					$.getJSON( archivoValidacion, { ChargeSection:ChargeSection,Precio:Precio,Ciudad:Ciudad,Tipo:Tipo })
 					.done(function(D) {
@@ -171,7 +172,6 @@
 						Cont=Cont+'</div>';
 						ResultadoBusqueda.append(Cont);
 						ResultadoBusqueda.fadeIn();
-						$("#mostrarTodos").text("Mostrar Todos");
 					});
     			}
  			});
